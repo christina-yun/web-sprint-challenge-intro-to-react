@@ -12,10 +12,10 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
+- [x] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [x] Open the assignment in Canvas and click on the "Set up git" option.
 - [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [x] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
 - [ ] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
@@ -81,6 +81,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  A: React JS is a declarative, component-based Javascript User Interface Library. It is used as a framework to build out apps that already have User Interface logic built into it to streamline the process of writing code and building out complex and reactive components that only render when targeted pieces of information change. React JS solves many issues including rendering only targeted components at the point that those components change, which saves a lot of rendering and data, as well as makes debugging a lot easier because by making it component-based, it is easier to parse out which parts of the app are breaking without searching through the entire document and going in between dependencies. Ultimately, what makes React powerful is that it solves problems of handling dynamic data to minimize the response time needed for the webpage.
+
+2. Describe component state.
+
+  A: Component state is an observable/quantifiable property that can be used as an input to control the behavior of the entire app or just pieces of the component. The state is some kind of information that can be utilized and dynamically change (and be updated!) over the lifetime of that component. 
+
+3. Describe props.
+
+  A: props is a special keyword in React that allows a component to pass JSX attributes and children to a child component as a single object, making those attributes and children accessible to that child component. Props-data is also read-only and can only pass down from parent to child in order to avoid nightmare debugging where the source of the problem cannot be found.
+
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  A: Side effects are anything that affects something outside the scope of the function being executed. These generally have to do with code that doesn't run immediately (e.g. a timer), testing to see what some results are outside of the side effect (e.g. logging), things that may take a moment to get (e.g. API requests), or things that manually manipulate the DOM. Side effects are changes that get made where different or additionally recurring inputs may output something different each time. Side effects are what make a component dynamic and responsive. React manages side effects to sync and respond in a targeted way by using the built-in 'useEffect()' function which takes 2 parameters of a callback function that you want to happen (e.g. an API request) and an optional array containing items that you want the callback to run each time the state of those items is changed. Not including the array makes it so that it renders whenever anything happens, an empty array means that it runs once while mounting, and including items in the array means that the callback function to re-render only does so if either of those items change.
