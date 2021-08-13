@@ -5,7 +5,7 @@ import styled from 'styled-components';
 //styling the components
 const StyledCharacter = styled.div`
     display:flex;
-    margin: 0 10rem;
+    margin: 0 3rem;
 
     .card{
         display:flex;
@@ -13,21 +13,28 @@ const StyledCharacter = styled.div`
 
     }
     .name{
-        width:20rem;
-        background-color:blue;
-        opacity:1;
+        width:17rem;
+        display:flex;
+        justify-content:flex-start;
     }
     h2{
-        margin:
+        font-family:'Geostar Fill';
     }
 
     .other-info{
-        margin:0 2rem;
-        background-color:pink;
-        opacity:1.5;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        width:12rem;
+        line-height:0.1;
+        margin: 0 0 0 7rem;
+        font-family: 'Work Sans';
+        font-weight:800;
     }
 
-    p{}
+    p{
+        
+    }
 `
 
 function Character(props){
@@ -42,8 +49,8 @@ function Character(props){
                 <div className='other-info'>
                     {/* <p>Homeworld: {character.homeworld}</p> */}
                     <p>Birth Year: {character['birth_year']}</p>
-                    <p>Hair Color: {character['hair_color']}</p>
-                    <p>Eye Color: {character['eye_color']}</p>    
+                    <p>Eye Color: {character['eye_color']}</p>  
+                    <p>Hair Color: {character["hair_color"]}</p>  
                 </div>
             </div>
         </StyledCharacter>
