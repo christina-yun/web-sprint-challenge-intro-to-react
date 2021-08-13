@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import HomePlanet from './HomePlanet';
+
 //styling the components
 const StyledCharacter = styled.div`
     display:flex;
@@ -47,7 +49,7 @@ function Character(props){
                    <h2>{character.name}</h2>
                 </div>
                 <div className='other-info'>
-                    {/* <p>Homeworld: {character.homeworld}</p> */}
+                    <HomePlanet homePlanet ={character.homeworld}/>
                     <p>Birth Year: {character['birth_year']}</p>
                     <p>Eye Color: {character['eye_color']}</p>  
                     <p>Hair Color: {character["hair_color"]}</p>  
