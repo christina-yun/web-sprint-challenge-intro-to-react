@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
 //import overall styling
-import './App.css';
 import styled from 'styled-components'
 
 //import children components
