@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import CharacterInfo from './CharacterInfo';
+import Toggle from './Toggle';
 
 //styling the components
 const StyledCharacter = styled.div`
@@ -14,26 +15,14 @@ const StyledCharacter = styled.div`
         margin:1rem;
     }
     .name{
-        width:17rem;
+        width:18rem;
         display:flex;
         justify-content:flex-start;
+        padding:0.6rem;
     }
 
     h2{
         font-family:'Geostar Fill';
-    }
-
-
-
-    .other-info-container{
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        width:12rem;
-        line-height:0.1;
-        margin: 0 0 0 7rem;
-        font-family: 'Work Sans';
-        font-weight:800;
     }
 `
 
@@ -46,7 +35,7 @@ function Character(props){
             <div className='card'>
                 <div className='name'>
                    <h2>{character.name}</h2>
-                   <button onClick ={() => setShowInfo(!showInfo)}>+</button>
+                   <Toggle setShowInfo={setShowInfo} showInfo={showInfo}/>
                 </div>
                 <CharacterInfo character = {character} showInfo = {showInfo}/>          
             </div>
