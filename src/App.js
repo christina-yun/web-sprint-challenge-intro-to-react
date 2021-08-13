@@ -1,21 +1,42 @@
-import React from 'react';
+//import tools
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
+
+//import overall styling
 import './App.css';
 
+//import children components
 import Character from './components/Character';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
+  const [listOfCharacters, setListOfCharacters] = useState([]);
+  const [character, setCharacter] = useState(null);
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  //fetch data from API
+  useEffect(() =>{
+    axios.get('https://swapi.dev/api/people/')
+    .then(res =>{
+      setListOfCharacters(res.data)
+    })
+    .catch(err => {
+      console.error ('Oops, please try again')
+    })
+  },[])
+
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      {listOfCharacters.map(object => {
+        return <Character key={object.index} character={object} />
+      })}
+      
     </div>
   );
 }
-
 export default App;
